@@ -68,3 +68,12 @@
 /Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/web_s10197636.pdb
 /Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/web_s10197636.genruntimeconfig.cache
 /Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/web_s10197636.csproj.CopyComplete
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/System.Web.Mvc.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/System.Web.Razor.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/System.Web.Helpers.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/System.Web.WebPages.Deployment.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/System.Web.WebPages.Razor.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/System.Web.WebPages.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/bin/Debug/netcoreapp3.1/Microsoft.Web.Infrastructure.dll
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/Razor/Views/Home/StaffMain.cshtml.g.cs
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_StaffMenu.cshtml.g.cs
