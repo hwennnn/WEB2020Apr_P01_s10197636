@@ -1,0 +1,80 @@
+﻿@model web_s10197636.Models.Rental
+@{
+    ViewData["Title"] = "Rental Calculator";
+}
+
+Rental Calculator
+<hr />
+<form asp-controller="Rental" asp-action="Calculate" method="post">
+    <div>Input Data:</div>
+    <div>
+        <label asp-for="LoanDate"></label>
+        <input asp-for="LoanDate" readonly />
+    </div>
+    <div>
+        <label asp-for="NumBooks"></label>
+        <select asp-for="NumBooks" asp-items="@ViewData["NumBooks"]
+ as List<SelectListItem>"></select>
+    </div>
+    <div>
+        <label asp-for="NumDays"></label>
+        <div class="form-group form-check-inline">
+            @foreach (var item in ViewData["NumDays"]
+          as List<int>)
+            {
+                <label>
+                    <input asp-for="NumDays" type="radio" value="@item" />
+                    @item
+                </label>
+            }
+        </div>
+    </div>
+    <div>
+        <label asp-for="Discounts"></label>
+        <div class="form-group form-check-inline">
+            @for (int i = 0; i < Model.Discounts.Count; i++)
+            {
+                <input asp-for="Discounts[i].Selected"
+                       type="checkbox" />
+            <label asp-for="Discounts[i].Selected">
+                @Model.Discounts[i].Description
+            </label>
+            <!-- Hidden fields to get value at
+            server-side and states of checkbox list -->
+            <input type="hidden"
+                   asp-for="Discounts[i].DiscountPercent" />
+            <input type="hidden"
+                   asp-for="Discounts[i].Description" />
+            }
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Compute" />
+    </div>
+</form>
+
+@if (Convert.ToBoolean(ViewData["ShowResult"]))
+{
+ <span>Result:</span>
+ <div>
+ <label asp-for="DueDate"></label>
+ @Html.Display("DueDate")
+ </div>
+ <div>
+ <label asp-for="RentalRate"></label>
+ @Html.Display("RentalRate")
+ (per book per day)
+ </div>
+ <div>
+ <label asp-for="RentalFee"></label>
+ @Html.Display("RentalFee")
+ </div>
+ <div>
+ <label asp-for="DiscountPercent"></label>
+ @Html.Display("DiscountPercent")
+ </div>
+ <div>
+ <label asp-for="AmountPayable"></label>
+ @Html.Display("AmountPayable")
+ </div>
+}

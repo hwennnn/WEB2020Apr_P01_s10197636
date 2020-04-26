@@ -6,12 +6,12 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+    <Folder Include="Views\Rental\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Shared\Index.cshtml" />
-    <Content Remove="Views\Home\Indexa.cshtml" />
   </ItemGroup>
 </Project>
