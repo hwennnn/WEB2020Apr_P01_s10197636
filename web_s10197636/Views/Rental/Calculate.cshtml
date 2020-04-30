@@ -1,80 +1,101 @@
 ﻿@model web_s10197636.Models.Rental
-@{
-    ViewData["Title"] = "Rental Calculator";
-}
 
-Rental Calculator
+@{ ViewData["Title"] = "Rental Calculator"; }
+
+<h4 class="PageTitle">Rental Calculator</h4>
 <hr />
 <form asp-controller="Rental" asp-action="Calculate" method="post">
-    <div>Input Data:</div>
-    <div>
-        <label asp-for="LoanDate"></label>
-        <input asp-for="LoanDate" readonly />
-    </div>
-    <div>
-        <label asp-for="NumBooks"></label>
-        <select asp-for="NumBooks" asp-items="@ViewData["NumBooks"]
- as List<SelectListItem>"></select>
-    </div>
-    <div>
-        <label asp-for="NumDays"></label>
-        <div class="form-group form-check-inline">
-            @foreach (var item in ViewData["NumDays"]
-          as List<int>)
-            {
-                <label>
-                    <input asp-for="NumDays" type="radio" value="@item" />
-                    @item
-                </label>
-            }
+    <fieldset class="FormContent">
+        <legend>Input Data:</legend>
+        <div class="form-group row">
+            <label asp-for="LoanDate" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <input asp-for="LoanDate" readonly class="form-control-plaintext" />
+            </div>
         </div>
-    </div>
-    <div>
-        <label asp-for="Discounts"></label>
-        <div class="form-group form-check-inline">
-            @for (int i = 0; i < Model.Discounts.Count; i++)
-            {
-                <input asp-for="Discounts[i].Selected"
-                       type="checkbox" />
-            <label asp-for="Discounts[i].Selected">
-                @Model.Discounts[i].Description
-            </label>
-            <!-- Hidden fields to get value at
-            server-side and states of checkbox list -->
-            <input type="hidden"
-                   asp-for="Discounts[i].DiscountPercent" />
-            <input type="hidden"
-                   asp-for="Discounts[i].Description" />
-            }
+        <div class="form-group row">
+            <label asp-for="NumBooks"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 col-md-4">
+                <select asp-for="NumBooks"
+                        asp-items="@ViewData["NumBooks"] as List<SelectListItem>"
+                        class="form-control"></select>
+            </div>
         </div>
-    </div>
-    <div>
-        <input type="submit" value="Compute" />
-    </div>
+        <div class="form-group row">
+            <label asp-for="NumDays" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 ">
+                <div class="form-group form-check-inline">
+                    @foreach (var item in ViewData["NumDays"] as List<int>){
+                        <label class="col-form-label">
+                            <input asp-for="NumDays" type="radio"
+                                   value="@item" class="form-check-input" />
+                            <span style="font-weight:normal;padding-right:20px">@item</span>
+                        </label>}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Discounts" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 ">
+                <div class="form-group form-check-inline">
+                    @for (int i = 0; i
+                   < Model.Discounts.Count; i++)
+                    {<input asp-for="Discounts[i].Selected" type="checkbox" class="form-check-input" />
+                        <label asp-for="Discounts[i].Selected" class="col-form-label" style="font-weight:normal;padding-right:20px">
+                            @Model.Discounts[i].Description
+                        </label>
+                        <!-- Hidden fields to get value at
+                            server-side and states of checkbox list -->
+                        <input type="hidden" asp-for="Discounts[i].DiscountPercent" />
+                        <input type="hidden" asp-for="Discounts[i].Description" />}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <input type="submit" value="Compute" class="btn btn-primary" />
+                </div>
+            </div>
+    </fieldset>
 </form>
 
 @if (Convert.ToBoolean(ViewData["ShowResult"]))
 {
- <span>Result:</span>
- <div>
- <label asp-for="DueDate"></label>
- @Html.Display("DueDate")
- </div>
- <div>
- <label asp-for="RentalRate"></label>
- @Html.Display("RentalRate")
- (per book per day)
- </div>
- <div>
- <label asp-for="RentalFee"></label>
- @Html.Display("RentalFee")
- </div>
- <div>
- <label asp-for="DiscountPercent"></label>
- @Html.Display("DiscountPercent")
- </div>
- <div>
- <label asp-for="AmountPayable"></label>
- @Html.Display("AmountPayable")
- </div>
+    <fieldset class="FormContent">
+        <legend>Result:</legend>
+        <div class="form-group row">
+            <label asp-for="DueDate" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("DueDate")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="RentalRate" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("RentalRate")
+                <span style="padding:4px; font-style:italic;">
+                    (per book per day)
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="RentalFee" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("RentalFee")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="DiscountPercent" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("DiscountPercent")
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="AmountPayable" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 form-control-plaintext">
+                @Html.Display("AmountPayable")
+            </div>
+        </div>
+    </fieldset>
 }

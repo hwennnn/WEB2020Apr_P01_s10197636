@@ -1,27 +1,36 @@
-﻿<Properties StartupConfiguration="{BCA27D95-0FCB-4DF8-A97F-0B259B60C593}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Controllers/RentalController.cs">
+﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Rental/Calculate.cshtml">
     <Files>
-      <File FileName="web_s10197636/Controllers/RentalController.cs" Line="83" Column="60" IsPinned="True" />
-      <File FileName="web_s10197636/Models/Rental.cs" Line="48" Column="59" IsPinned="True" />
-      <File FileName="web_s10197636/Views/Rental/Calculate.cshtml" Line="37" Column="54" IsPinned="True" />
-      <File FileName="web_s10197636/Program.cs" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Home/Index.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="web_s10197636/Views/Rental/Calculate.cshtml" Line="47" Column="57" IsPinned="True" />
+      <File FileName="web_s10197636/Controllers/RentalController.cs" IsPinned="True" />
+      <File FileName="web_s10197636/Models/Rental.cs" />
+      <File FileName="web_s10197636/Program.cs" />
+      <File FileName="web_s10197636/Views/Home/Index.cshtml" />
+      <File FileName="web_s10197636/Controllers/HomeController.cs" />
       <File FileName="web_s10197636/Startup.cs" />
       <File FileName="web_s10197636/Views/Shared/_Layout.cshtml" />
       <File FileName="web_s10197636/Views/Shared/_StaffMenu.cshtml" />
-      <File FileName="web_s10197636/Views/Home/StaffMain.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="web_s10197636/Views/Home/StaffMain.cshtml" />
+      <File FileName="web_s10197636/Views/Home/Privacy.cshtml" />
       <File FileName="web_s10197636/Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="web_s10197636/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="web_s10197636/Models/ErrorViewModel.cs" />
       <File FileName="web_s10197636/Views/_ViewStart.cshtml" />
-      <File FileName="web_s10197636/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="web_s10197636/Views/_ViewImports.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="web_s10197636" expanded="True">
-            <Node name="web_s10197636" expanded="True" selected="True" />
+            <Node name="web_s10197636" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Rental" expanded="True">
+                  <Node name="Calculate.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
