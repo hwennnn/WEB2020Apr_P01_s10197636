@@ -79,3 +79,4 @@
 /Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_StaffMenu.cshtml.g.cs
 /Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/web_s10197636.csproj.CoreCompileInputs.cache
 /Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/Razor/Views/Rental/Calculate.cshtml.g.cs
+/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/obj/Debug/netcoreapp3.1/Razor/Views/Fine/Calculate.cshtml.g.cs

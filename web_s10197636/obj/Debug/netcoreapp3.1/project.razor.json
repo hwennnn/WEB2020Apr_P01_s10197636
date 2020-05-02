@@ -20531,6 +20531,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/Views/Fine/Calculate.cshtml",
+      "TargetPath": "Views\\Fine\\Calculate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/houman/Desktop/NP/2.1/WEB/web2020apr_p01_s10197636/web_s10197636/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
