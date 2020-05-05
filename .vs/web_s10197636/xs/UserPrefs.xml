@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Fine/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Fine/Calculate.cshtml">
     <Files>
       <File FileName="web_s10197636/Views/Rental/Calculate.cshtml" Line="59" Column="19" IsPinned="True" />
-      <File FileName="web_s10197636/Controllers/RentalController.cs" IsPinned="True" />
+      <File FileName="web_s10197636/Controllers/RentalController.cs" Line="20" Column="47" IsPinned="True" />
       <File FileName="web_s10197636/Models/Rental.cs" />
       <File FileName="web_s10197636/Program.cs" />
       <File FileName="web_s10197636/Views/Home/Index.cshtml" />
@@ -17,8 +17,8 @@
       <File FileName="web_s10197636/Views/_ViewStart.cshtml" />
       <File FileName="web_s10197636/Views/_ViewImports.cshtml" />
       <File FileName="web_s10197636/Models/Fine.cs" Line="9" Column="37" />
-      <File FileName="web_s10197636/Controllers/FineController.cs" Line="23" Column="49" />
-      <File FileName="web_s10197636/Views/Fine/Index.cshtml" Line="6" Column="1" />
+      <File FileName="web_s10197636/Controllers/FineController.cs" Line="17" Column="14" />
+      <File FileName="web_s10197636/Views/Fine/Index.cshtml" Line="12" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,9 +28,8 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Fine" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Fine" expanded="True" selected="True" />
+                <Node name="Rental" expanded="True" />
               </Node>
             </Node>
           </Node>
