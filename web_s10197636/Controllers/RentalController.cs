@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using web_s10197636.Models;
 
 
@@ -50,6 +51,14 @@ namespace web_s10197636.Controllers
         }
         public ActionResult Calculate()
         {
+            // Stop accessing the action if not logged in
+            // or account not in the "Staff" role
+            if ((HttpContext.Session.GetString("Role") == null) ||
+            (HttpContext.Session.GetString("Role") != "Staff"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             //Prepare the ViewData to be used in Calculate.cshtml view
             ViewData["ShowResult"] = false;
             ViewData["NumBooks"] = numBooks;

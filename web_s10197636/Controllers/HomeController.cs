@@ -34,19 +34,48 @@ namespace web_s10197636.Controllers
 
             if (loginID == "abc@npbook.com" && password == "pass1234")
             {
+
+                // Store Login ID in session with the key “LoginID”
+                HttpContext.Session.SetString("LoginID", loginID);
+                // Store user role “Staff” as a string in session with the key “Role”
+                HttpContext.Session.SetString("Role", "Staff");
                 // Redirect user to the "StaffMain" view through an action
+                HttpContext.Session.SetString("LoginDT", DateTime.Now.ToString("dd-MMMM-y h:mm:ss tt"));
                 return RedirectToAction("StaffMain");
             }
 
-            return RedirectToAction("Index");
+            else
+            {
+                // Store an error message in TempData for display at the index view
+                TempData["Message"] = "Invalid Login Credentials!";
+                return RedirectToAction("Index");
+            }
+            
 
         }
 
 
         public ActionResult StaffMain()
         {
-            return View();
+           if(HttpContext.Session.GetString("Role") != null)
+ {
+                if (HttpContext.Session.GetString("Role") == "Staff")
+                {
+                    return View();
+                }
+            }
+
+            return RedirectToAction("Index");
         }
+
+        public ActionResult LogOut()
+        {
+            // Clear all key-values pairs stored in session state
+            HttpContext.Session.Clear();
+            // Call the Index action of Home controller
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();

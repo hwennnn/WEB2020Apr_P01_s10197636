@@ -9,14 +9,40 @@
 </head>
 <body>
     <header>
-        @await Html.PartialAsync("_StaffMenu.cshtml")
+        @if (Context.Session.GetString("Role") != null)
+        {
+            if (Context.Session.GetString("Role") == "Staff")
+            {
+                @await Html.PartialAsync("_StaffMenu.cshtml")
+            }
+        }
     </header>
         <div class="container">
             <!-- 1st row -->
             <div class="row">
                 <div class="col-sm-12">
                     <p style="padding:2px 15px;">
+                        @{
+                            string userId = "Anonymous";
+                            string userRole = "Unknown";
+                            string loginDT = "just now";
+                            if (Context.Session.GetString("LoginID") != null)
+                            {
+                                userId = Context.Session.GetString("LoginID");
+                            }
+                            if (Context.Session.GetString("Role") != null)
+                            {
+                                userRole = Context.Session.GetString("Role");
+                            }
+                            if (Context.Session.GetString("LoginDT") != null)
+                            {
+                                loginDT = Context.Session.GetString("LoginDT");
+                            }
+                        }
                         Welcome,&nbsp;
+                        <span style="font-weight:bold">@userId</span>&nbsp;
+                        (Role: @userRole).&nbsp;
+                        You have logged in since @loginDT
                     </p>
                 </div>
             </div>
