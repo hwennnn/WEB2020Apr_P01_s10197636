@@ -1,25 +1,31 @@
 ﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Fine/Calculate.cshtml">
     <Files>
       <File FileName="web_s10197636/Views/Rental/Calculate.cshtml" Line="59" Column="19" IsPinned="True" />
       <File FileName="web_s10197636/Controllers/RentalController.cs" IsPinned="True" />
-      <File FileName="web_s10197636/Models/Rental.cs" Line="1" Column="1" />
+      <File FileName="web_s10197636/Models/Rental.cs" Line="18" Column="62" />
       <File FileName="web_s10197636/Program.cs" />
       <File FileName="web_s10197636/Views/Home/Index.cshtml" Line="42" Column="77" />
-      <File FileName="web_s10197636/Controllers/HomeController.cs" Line="35" Column="66" />
-      <File FileName="web_s10197636/Startup.cs" Line="58" Column="30" />
-      <File FileName="web_s10197636/Views/Shared/_Layout.cshtml" Line="16" Column="30" />
+      <File FileName="web_s10197636/Controllers/HomeController.cs" />
+      <File FileName="web_s10197636/Startup.cs" Line="36" Column="10" />
+      <File FileName="web_s10197636/Views/Shared/_Layout.cshtml" />
       <File FileName="web_s10197636/Views/Shared/_StaffMenu.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Home/StaffMain.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Home/Privacy.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Models/ErrorViewModel.cs" />
-      <File FileName="web_s10197636/Views/_ViewStart.cshtml" Line="3" Column="2" />
-      <File FileName="web_s10197636/Views/_ViewImports.cshtml" Line="5" Column="1" />
+      <File FileName="web_s10197636/Views/Home/StaffMain.cshtml" />
+      <File FileName="web_s10197636/Views/Home/Privacy.cshtml" />
+      <File FileName="web_s10197636/Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="web_s10197636/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="web_s10197636/Views/_ViewStart.cshtml" />
+      <File FileName="web_s10197636/Views/_ViewImports.cshtml" />
       <File FileName="web_s10197636/Models/Fine.cs" Line="1" Column="1" />
-      <File FileName="web_s10197636/Controllers/FineController.cs" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Fine/Calculate.cshtml" />
-      <File FileName="web_s10197636/Views/Shared/Error.cshtml" Line="1" Column="1" />
+      <File FileName="web_s10197636/Controllers/FineController.cs" />
+      <File FileName="web_s10197636/Views/Fine/Calculate.cshtml" Line="1" Column="1" />
+      <File FileName="web_s10197636/Views/Shared/Error.cshtml" />
+      <File FileName="web_s10197636/appsettings.json" Line="15" Column="1" />
+      <File FileName="web_s10197636/Models/Staff.cs" Line="35" Column="32" />
+      <File FileName="web_s10197636/DAL/StaffDAL.cs" Line="45" Column="1" />
+      <File FileName="web_s10197636/Controllers/StaffController.cs" Line="30" Column="10" />
+      <File FileName="web_s10197636/Views/Staff/_ViewStaff.cshtml" Line="25" Column="44" />
+      <File FileName="web_s10197636/Views/Staff/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,14 +33,16 @@
           <Node name="web_s10197636" expanded="True">
             <Node name="web_s10197636" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Fine" expanded="True" />
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                <Node name="Fine" expanded="True">
+                  <Node name="Calculate.cshtml" selected="True" />
                 </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Rental" expanded="True" />
                 <Node name="Shared" expanded="True" />
+                <Node name="Staff" expanded="True" />
               </Node>
             </Node>
           </Node>
