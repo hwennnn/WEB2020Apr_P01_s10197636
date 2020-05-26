@@ -14,14 +14,19 @@ namespace web_s10197636.Models
 
         public char Gender { get; set; }
 
+        [Required] // set DOB field as required to prevent error
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
         public DateTime? DOB { get; set; }
 
         public string Nationality { get; set; }
 
-        [Display(Name = "Email Address")]
-        [RegularExpression(@"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$")]
+        [Display(Name = "Email address")]
+        [Required]
+        // Validation Annotation for email address format
+        [EmailAddress]
+        // Custom Validation Attribute for checking email address exists
+        [ValidateEmailExists]
         public string Email { get; set; }
 
         [Display(Name = "Monthly Salary (SGD)")]
