@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Models/ValidateEmailExists.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Staff/Delete.cshtml">
     <Files>
       <File FileName="web_s10197636/Views/Rental/Calculate.cshtml" Line="59" Column="19" IsPinned="True" />
       <File FileName="web_s10197636/Controllers/RentalController.cs" IsPinned="True" />
       <File FileName="web_s10197636/Models/Rental.cs" />
       <File FileName="web_s10197636/Program.cs" />
       <File FileName="web_s10197636/Views/Home/Index.cshtml" />
-      <File FileName="web_s10197636/Controllers/HomeController.cs" Line="91" Column="1" />
+      <File FileName="web_s10197636/Controllers/HomeController.cs" />
       <File FileName="web_s10197636/Startup.cs" />
       <File FileName="web_s10197636/Views/Shared/_Layout.cshtml" />
       <File FileName="web_s10197636/Views/Shared/_StaffMenu.cshtml" />
@@ -21,13 +21,17 @@
       <File FileName="web_s10197636/Views/Fine/Calculate.cshtml" />
       <File FileName="web_s10197636/Views/Shared/Error.cshtml" />
       <File FileName="web_s10197636/appsettings.json" />
-      <File FileName="web_s10197636/Models/Staff.cs" Line="1" Column="1" />
-      <File FileName="web_s10197636/DAL/StaffDAL.cs" Line="115" Column="33" />
-      <File FileName="web_s10197636/Controllers/StaffController.cs" Line="69" Column="1" />
+      <File FileName="web_s10197636/Models/Staff.cs" />
+      <File FileName="web_s10197636/DAL/StaffDAL.cs" />
+      <File FileName="web_s10197636/Controllers/StaffController.cs" Line="183" Column="1" />
       <File FileName="web_s10197636/Views/Staff/_ViewStaff.cshtml" />
       <File FileName="web_s10197636/Views/Staff/Index.cshtml" />
-      <File FileName="web_s10197636/Views/Staff/Create.cshtml" Line="40" Column="60" />
-      <File FileName="web_s10197636/Models/ValidateEmailExists.cs" Line="4" Column="41" />
+      <File FileName="web_s10197636/Views/Staff/Create.cshtml" />
+      <File FileName="web_s10197636/Models/ValidateEmailExists.cs" Line="4" Column="31" />
+      <File FileName="web_s10197636/DAL/BranchDAL.cs" Line="62" Column="1" />
+      <File FileName="web_s10197636/Models/Branch.cs" Line="16" Column="1" />
+      <File FileName="web_s10197636/Views/Staff/Edit.cshtml" Line="73" Column="8" />
+      <File FileName="web_s10197636/Views/Staff/Delete.cshtml" Line="37" Column="8" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -36,15 +40,15 @@
             <Node name="web_s10197636" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ValidateEmailExists.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Fine" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Rental" expanded="True" />
                 <Node name="Shared" expanded="True" />
-                <Node name="Staff" expanded="True" />
+                <Node name="Staff" expanded="True">
+                  <Node name="Delete.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

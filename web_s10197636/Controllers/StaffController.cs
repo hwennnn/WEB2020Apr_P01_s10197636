@@ -16,6 +16,7 @@ namespace web_s10197636.Controllers
     {
 
         private StaffDAL staffContext = new StaffDAL();
+        private BranchDAL branchContext = new BranchDAL();
 
         public ActionResult Index()
         {
@@ -92,5 +93,101 @@ namespace web_s10197636.Controllers
             });
             return countries;
         }
+
+        private List<Branch> GetAllBranches()
+        {
+            // Get a list of branches from database
+            List<Branch> branchList = branchContext.GetAllBranches();
+            // Adding a select prompt at the first row of the branch list
+            branchList.Insert(0, new Branch
+            {
+                BranchNo = 0,
+                Address = "--Select--"
+            });
+            return branchList;
+        }
+
+        // GET: Staff/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            // Stop accessing the action if not logged in
+            // or account not in the "Staff" role
+            if ((HttpContext.Session.GetString("Role") == null) ||
+            (HttpContext.Session.GetString("Role") != "Staff"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            if (id == null)
+            { //Query string parameter not provided
+              //Return to listing page, not allowed to edit
+                return RedirectToAction("Index");
+            }
+            ViewData["BranchList"] = GetAllBranches();
+            Staff staff = staffContext.GetDetails(id.Value);
+            if (staff == null)
+            {
+                //Return to listing page, not allowed to edit
+                return RedirectToAction("Index");
+            }
+            return View(staff);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Staff staff)
+        {
+            //Get branch list for drop-down list
+            //in case of the need to return to Edit.cshtml view
+            ViewData["BranchList"] = GetAllBranches();
+
+            if (ModelState.IsValid)
+            {
+                //Update staff record to database
+                staffContext.Update(staff);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                //Input validation fails, return to the view
+                //to display error message
+                return View(staff);
+            }
+        }
+
+        // GET: Staff/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            // Stop accessing the action if not logged in
+            // or account not in the "Staff" role
+            if ((HttpContext.Session.GetString("Role") == null) ||
+            (HttpContext.Session.GetString("Role") != "Staff"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            if (id == null)
+            {
+                //Return to listing page, not allowed to edit
+                return RedirectToAction("Index");
+            }
+            Staff staff = staffContext.GetDetails(id.Value);
+            if (staff == null)
+            {
+                //Return to listing page, not allowed to edit
+                return RedirectToAction("Index");
+            }
+            return View(staff);
+        }
+
+        // POST: Staff/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Staff staff)
+        {
+            // Delete the staff record from database
+            staffContext.Delete(staff.StaffId);
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

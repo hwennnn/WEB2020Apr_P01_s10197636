@@ -134,5 +134,122 @@ namespace web_s10197636.DAL
 
             return emailFound;
         }
+
+        public Staff GetDetails(int staffId)
+        {
+            Staff staff = new Staff();
+
+            //Create a SqlCommand object from connection object
+            SqlCommand cmd = conn.CreateCommand();
+
+            //Specify the SELECT SQL statement that
+            //retrieves all attributes of a staff record.
+            cmd.CommandText = @"SELECT * FROM Staff WHERE StaffID = @selectedStaffID";
+
+            //Define the parameter used in SQL statement, value for the
+            //parameter is retrieved from the method parameter “staffId”.
+            cmd.Parameters.AddWithValue("@selectedStaffID", staffId);
+
+            //Open a database connection
+            conn.Open();
+            //Execute the SELECT SQL through a DataReader
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                //Read the record from database
+                while (reader.Read())
+                {
+                    // Fill staff object with values from the data reader
+                    staff.StaffId = staffId;
+                    staff.Name = !reader.IsDBNull(1) ? reader.GetString(1) : null;
+                    // (char) 0 - ASCII Code 0 - null value
+                    staff.Gender = !reader.IsDBNull(2) ? reader.GetString(2)[0] : (char)0;
+                    staff.DOB = !reader.IsDBNull(3) ? reader.GetDateTime(3) : (DateTime?)null;
+                    staff.Salary = !reader.IsDBNull(5) ? reader.GetDecimal(5) : (Decimal)0.00;
+                    staff.Nationality = !reader.IsDBNull(6) ? reader.GetString(6) : null;
+                    staff.Email = !reader.IsDBNull(9) ? reader.GetString(9) : null;
+                    staff.IsFullTime = !reader.IsDBNull(11) ? reader.GetBoolean(11) : false;
+                    staff.BranchNo = !reader.IsDBNull(7) ? reader.GetInt32(7) : (int?)null;
+                }
+            }
+
+            //Close DataReader
+            reader.Close();
+            //Close the database connection
+            conn.Close();
+
+            return staff;
+
+        }
+
+        // Return number of row updated
+        public int Update(Staff staff)
+        {
+            //Create a SqlCommand object from connection object
+            SqlCommand cmd = conn.CreateCommand();
+
+            //Specify an UPDATE SQL statement
+            cmd.CommandText = @"UPDATE Staff SET Salary=@salary,
+                                 Status=@status, BranchNo = @branchNo
+                                WHERE StaffID = @selectedStaffID";
+
+            //Define the parameters used in SQL statement, value for each parameter
+            //is retrieved from respective class's property.
+            cmd.Parameters.AddWithValue("@salary", staff.Salary);
+            cmd.Parameters.AddWithValue("@status", staff.IsFullTime);
+
+            if (staff.BranchNo != null && staff.BranchNo != 0)
+                // A branch is assigned
+                cmd.Parameters.AddWithValue("@branchNo", staff.BranchNo.Value);
+            else // No branch is assigned
+                cmd.Parameters.AddWithValue("@branchNo", DBNull.Value);
+
+            cmd.Parameters.AddWithValue("@selectedStaffID", staff.StaffId);
+
+            //Open a database connection
+            conn.Open();
+            //ExecuteNonQuery is used for UPDATE and DELETE
+            int count = cmd.ExecuteNonQuery();
+            //Close the database connection
+            conn.Close();
+
+            return count;
+        }
+
+        public int Delete(int staffId)
+        {
+            //Instantiate a SqlCommand object, supply it with a DELETE SQL statement
+            //to delete a staff record specified by a Staff ID
+            SqlCommand cmd = conn.CreateCommand();
+            
+            //Open a database connection
+            conn.Open();
+            int rowAffected = 0;
+            
+            //Step1
+            cmd.CommandText = @"UPDATE STAFF SET SupervisorID = NULL WHERE SupervisorID = @selectStaffID";
+            cmd.Parameters.AddWithValue("@selectStaffID", staffId);
+            rowAffected += cmd.ExecuteNonQuery();
+
+            //Step2
+            cmd.CommandText = @"UPDATE BRANCH SET MgrID = NULL WHERE MgrID = @selectStaffID";
+            rowAffected += cmd.ExecuteNonQuery();
+
+            //Step3
+            cmd.CommandText = @"DELETE FROM StaffContact WHERE StaffID = @selectStaffID";
+            rowAffected += cmd.ExecuteNonQuery();
+
+            //Step4
+            cmd.CommandText = @"DELETE FROM Staff WHERE StaffID = @selectStaffID";
+
+            //Execute the DELETE SQL to remove the staff record
+            rowAffected += cmd.ExecuteNonQuery();
+
+            //Close database connection
+            conn.Close();
+            //Return number of row of staff record updated or deleted
+            return rowAffected;
+        }
     }
 }
