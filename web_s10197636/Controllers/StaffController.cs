@@ -269,17 +269,14 @@ namespace web_s10197636.Controllers
                     // Find the filename extension of the file to be uploaded.
                     string fileExt = Path.GetExtension(
                     staffVM.fileToUpload.FileName);
-                    Console.WriteLine(fileExt);
 
                     // Rename the uploaded file with the staff’s name.
                     string uploadedFile = staffVM.Name + fileExt;
-                    Console.WriteLine(uploadedFile);
 
                     // Get the complete path to the images folder in server
                     string savePath = Path.Combine(
-                    Directory.GetCurrentDirectory(),"wwwroot//images", uploadedFile); // i think "wwwroot\\images" is wrong so i change to "//"
-                    
-                    Console.WriteLine(savePath);
+                    Directory.GetCurrentDirectory(),"wwwroot//images", uploadedFile);
+                    // "\\" the backslash does not working in unix environment(i using macos) so i change to "//"
 
                     // Upload the file to server
                     using (var fileSteam = new FileStream(
