@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
+
 <h4 class="PageTitle">Edit Staff Record</h4>
 <hr />
 <form asp-action="Edit">
@@ -88,6 +89,8 @@
 
         <div>
             <a asp-action="Index">Back to List</a>
+            <a asp-action="UploadPhoto"
+               asp-route-id="@Model.StaffId">Upload Photo</a>
         </div>
 
     </fieldset>

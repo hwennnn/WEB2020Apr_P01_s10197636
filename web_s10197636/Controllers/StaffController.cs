@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using web_s10197636.DAL;
 using web_s10197636.Models;
+using System.IO; 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -243,5 +244,69 @@ namespace web_s10197636.Controllers
             return staffVM;
         }
 
+        public ActionResult UploadPhoto(int id)
+        {
+            // Stop accessing the action if not logged in
+            // or account not in the "Staff" role
+            if ((HttpContext.Session.GetString("Role") == null) ||
+            (HttpContext.Session.GetString("Role") != "Staff"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            Staff staff = staffContext.GetDetails(id);
+            StaffViewModel staffVM = MapToStaffVM(staff);
+            return View(staffVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UploadPhoto(StaffViewModel staffVM)
+        {
+            if (staffVM.fileToUpload != null && staffVM.fileToUpload.Length > 0)
+            {
+                try
+                {
+                    // Find the filename extension of the file to be uploaded.
+                    string fileExt = Path.GetExtension(
+                    staffVM.fileToUpload.FileName);
+                    Console.WriteLine(fileExt);
+
+                    // Rename the uploaded file with the staff’s name.
+                    string uploadedFile = staffVM.Name + fileExt;
+                    Console.WriteLine(uploadedFile);
+
+                    // Get the complete path to the images folder in server
+                    string savePath = Path.Combine(
+                    Directory.GetCurrentDirectory(),"wwwroot//images", uploadedFile); // i think "wwwroot\\images" is wrong so i change to "//"
+                    
+                    Console.WriteLine(savePath);
+
+                    // Upload the file to server
+                    using (var fileSteam = new FileStream(
+                    savePath, FileMode.Create))
+                    {
+                        await staffVM.fileToUpload.CopyToAsync(fileSteam);
+                    }
+
+                    staffVM.Photo = uploadedFile;
+                    ViewData["Message"] = "File uploaded successfully.";
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(
+                   "{0}: The write operation could not " +
+                   "be performed because the specified " +
+                   "part of the file is locked.",
+                   e.GetType().Name);
+                    //File IO error, could be due to access rights denied
+                    ViewData["Message"] = "File uploading fail!";
+                }
+                catch (Exception ex) //Other type of error
+                {
+                    ViewData["Message"] = ex.Message;
+                }
+            }
+            return View(staffVM);
+        }
     }
 }
