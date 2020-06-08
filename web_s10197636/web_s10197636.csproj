@@ -10,6 +10,7 @@
     <Folder Include="Views\Fine\" />
     <Folder Include="DAL\" />
     <Folder Include="Views\Staff\" />
+    <Folder Include="Views\Branch\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
