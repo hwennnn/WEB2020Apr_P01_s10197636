@@ -19,9 +19,9 @@
         </div>
 
         @* As there are purposes to set Email and DOB required to prevent errors,
-            I have to include them in view but displaying them in style:none *@
+            I have to include them in view but displaying them in readonly *@
 
-        <div style="display:none" class="form-group row">
+        <div class="form-group row">
             <label asp-for="Email"
                    class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9 col-md-5">
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div style="display:none" class="form-group row">
+        <div class="form-group row">
             <label asp-for="DOB"
                    class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9 col-md-5">
