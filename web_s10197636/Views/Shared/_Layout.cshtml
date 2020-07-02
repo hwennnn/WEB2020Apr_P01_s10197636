@@ -15,6 +15,10 @@
             {
                 @await Html.PartialAsync("_StaffMenu.cshtml")
             }
+            if (Context.Session.GetString("Role") == "Student")
+            {
+                @await Html.PartialAsync("_StudentMenu.cshtml")
+            }
         }
     </header>
         <div class="container">

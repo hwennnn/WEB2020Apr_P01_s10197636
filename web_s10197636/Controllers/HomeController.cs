@@ -76,6 +76,12 @@ namespace web_s10197636.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult StudentLogin()
+        {
+            HttpContext.Session.SetString("Role", "Student");
+            return RedirectToAction("Index", "Book");
+        }
+
         public IActionResult Privacy()
         {
             return View();

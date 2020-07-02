@@ -1,60 +1,65 @@
 ﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Staff/UploadPhoto.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Book/Index.cshtml">
     <Files>
-      <File FileName="web_s10197636/Controllers/RentalController.cs" IsPinned="True" />
-      <File FileName="web_s10197636/Models/Rental.cs" />
-      <File FileName="web_s10197636/Program.cs" />
-      <File FileName="web_s10197636/Views/Home/Index.cshtml" />
-      <File FileName="web_s10197636/Controllers/HomeController.cs" />
-      <File FileName="web_s10197636/Startup.cs" />
-      <File FileName="web_s10197636/Views/Shared/_Layout.cshtml" />
-      <File FileName="web_s10197636/Views/Shared/_StaffMenu.cshtml" />
-      <File FileName="web_s10197636/Views/Home/StaffMain.cshtml" />
-      <File FileName="web_s10197636/Views/Home/Privacy.cshtml" />
-      <File FileName="web_s10197636/Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="web_s10197636/Models/ErrorViewModel.cs" />
-      <File FileName="web_s10197636/Views/_ViewStart.cshtml" />
-      <File FileName="web_s10197636/Views/_ViewImports.cshtml" />
-      <File FileName="web_s10197636/Models/Fine.cs" />
-      <File FileName="web_s10197636/Controllers/FineController.cs" />
-      <File FileName="web_s10197636/Views/Fine/Calculate.cshtml" />
-      <File FileName="web_s10197636/Views/Shared/Error.cshtml" />
-      <File FileName="web_s10197636/appsettings.json" />
-      <File FileName="web_s10197636/Models/Staff.cs" Line="3" Column="1" />
-      <File FileName="web_s10197636/DAL/StaffDAL.cs" />
-      <File FileName="web_s10197636/Controllers/StaffController.cs" Line="303" Column="1" />
-      <File FileName="web_s10197636/Views/Staff/_ViewStaff.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Staff/Index.cshtml" Line="1" Column="1" />
-      <File FileName="web_s10197636/Views/Staff/Create.cshtml" Line="16" Column="48" />
+      <File FileName="web_s10197636/Views/Staff/_ViewStaff.cshtml" Line="46" Column="74" />
+      <File FileName="web_s10197636/Views/Staff/Index.cshtml" />
+      <File FileName="web_s10197636/Views/Staff/Create.cshtml" />
       <File FileName="web_s10197636/Models/ValidateEmailExists.cs" />
-      <File FileName="web_s10197636/DAL/BranchDAL.cs" Line="109" Column="1" />
-      <File FileName="web_s10197636/Models/Branch.cs" Line="1" Column="1" />
+      <File FileName="web_s10197636/DAL/BranchDAL.cs" />
+      <File FileName="web_s10197636/Models/Branch.cs" />
       <File FileName="web_s10197636/Views/Staff/Delete.cshtml" />
-      <File FileName="web_s10197636/Models/StaffViewModel.cs" Line="37" Column="6" />
-      <File FileName="web_s10197636/Views/Staff/Details.cshtml" Line="104" Column="1" />
-      <File FileName="web_s10197636/Models/BranchViewModel.cs" Line="15" Column="10" />
-      <File FileName="web_s10197636/Views/Staff/Edit.cshtml" Line="93" Column="62" />
-      <File FileName="web_s10197636/Controllers/BranchController.cs" Line="42" Column="1" />
-      <File FileName="web_s10197636/Views/Branch/Index.cshtml" Line="11" Column="55" />
-      <File FileName="web_s10197636/Views/Staff/UploadPhoto.cshtml" Line="1" Column="21" />
+      <File FileName="web_s10197636/Models/StaffViewModel.cs" />
+      <File FileName="web_s10197636/Views/Staff/Details.cshtml" />
+      <File FileName="web_s10197636/Models/BranchViewModel.cs" />
+      <File FileName="web_s10197636/Views/Staff/Edit.cshtml" />
+      <File FileName="web_s10197636/Controllers/BranchController.cs" />
+      <File FileName="web_s10197636/Views/Branch/Index.cshtml" />
+      <File FileName="web_s10197636/Views/Staff/UploadPhoto.cshtml" />
+      <File FileName="web_s10197636/Views/Rental/Calculate.cshtml" />
+      <File FileName="web_s10197636/Views/Shared/_StaffMenu.cshtml" />
+      <File FileName="web_s10197636/Views/Shared/_Layout.cshtml" Line="22" Column="10" />
+      <File FileName="web_s10197636/Views/Home/Index.cshtml" Line="51" Column="53" />
+      <File FileName="web_s10197636/Views/Home/Privacy.cshtml" />
+      <File FileName="web_s10197636/Views/Home/StaffMain.cshtml" />
+      <File FileName="web_s10197636/Controllers/StaffController.cs" />
+      <File FileName="web_s10197636/DAL/StaffDAL.cs" />
+      <File FileName="web_s10197636/Views/_ViewImports.cshtml" />
+      <File FileName="web_s10197636/Views/_ViewStart.cshtml" />
+      <File FileName="web_s10197636/Models/Staff.cs" />
+      <File FileName="web_s10197636/wwwroot/css/site.css" />
+      <File FileName="web_s10197636/Models/Book.cs" />
+      <File FileName="web_s10197636/Controllers/HomeController.cs" Line="83" Column="10" />
+      <File FileName="web_s10197636/Controllers/BookController.cs" Line="28" Column="17" />
+      <File FileName="web_s10197636/Controllers/FineController.cs" />
+      <File FileName="web_s10197636/Controllers/RentalController.cs" />
+      <File FileName="web_s10197636/Views/Shared/_StudentMenu.cshtml" Line="33" Column="7" />
+      <File FileName="web_s10197636/Views/Book/Index.cshtml" Line="1" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="web_s10197636" expanded="True">
             <Node name="web_s10197636" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Book" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
                 <Node name="Branch" expanded="True" />
                 <Node name="Fine" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Rental" expanded="True" />
                 <Node name="Shared" expanded="True" />
-                <Node name="Staff" expanded="True">
-                  <Node name="UploadPhoto.cshtml" selected="True" />
-                </Node>
+                <Node name="Staff" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="images" expanded="True" />
               </Node>
             </Node>
           </Node>

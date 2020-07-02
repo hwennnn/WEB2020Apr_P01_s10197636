@@ -11,10 +11,12 @@
     <Folder Include="DAL\" />
     <Folder Include="Views\Staff\" />
     <Folder Include="Views\Branch\" />
+    <Folder Include="Views\Book\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Shared\Index.cshtml" />
