@@ -22,5 +22,7 @@ namespace web_s10197636.Models
 
         [Display(Name = "Quantity Available")]
         public int Qty { get; set; }
+
+        public string Justification { get; set; }
     }
 }

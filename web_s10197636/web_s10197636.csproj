@@ -12,6 +12,7 @@
     <Folder Include="Views\Staff\" />
     <Folder Include="Views\Branch\" />
     <Folder Include="Views\Book\" />
+    <Folder Include="Views\Vote\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
