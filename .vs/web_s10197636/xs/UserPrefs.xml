@@ -1,5 +1,5 @@
-﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Views/Vote/Details.cshtml">
+﻿<Properties StartupConfiguration="{79884F67-8DDD-4496-905F-C217930760B8}|Custom">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web_s10197636/Properties/launchSettings.json">
     <Files>
       <File FileName="web_s10197636/Views/Staff/_ViewStaff.cshtml" Line="7" Column="39" />
       <File FileName="web_s10197636/Views/Staff/Index.cshtml" />
@@ -27,18 +27,22 @@
       <File FileName="web_s10197636/Views/_ViewStart.cshtml" />
       <File FileName="web_s10197636/Models/Staff.cs" />
       <File FileName="web_s10197636/wwwroot/css/site.css" />
-      <File FileName="web_s10197636/Models/Book.cs" Line="26" Column="50" />
-      <File FileName="web_s10197636/Controllers/HomeController.cs" />
+      <File FileName="web_s10197636/Models/Book.cs" />
+      <File FileName="web_s10197636/Controllers/HomeController.cs" Line="110" Column="39" />
       <File FileName="web_s10197636/Controllers/BookController.cs" />
       <File FileName="web_s10197636/Controllers/FineController.cs" />
       <File FileName="web_s10197636/Controllers/RentalController.cs" />
       <File FileName="web_s10197636/Views/Shared/_StudentMenu.cshtml" />
-      <File FileName="web_s10197636/Views/Book/Index.cshtml" Line="63" Column="26" />
+      <File FileName="web_s10197636/Views/Book/Index.cshtml" />
       <File FileName="web_s10197636/Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="web_s10197636/Models/Vote.cs" Line="9" Column="50" />
-      <File FileName="web_s10197636/Controllers/VoteController.cs" Line="77" Column="10" />
-      <File FileName="web_s10197636/Models/VoteDetails.cs" Line="21" Column="10" />
-      <File FileName="web_s10197636/Views/Vote/Details.cshtml" Line="1" Column="1" />
+      <File FileName="web_s10197636/Models/Vote.cs" />
+      <File FileName="web_s10197636/Controllers/VoteController.cs" />
+      <File FileName="web_s10197636/Models/VoteDetails.cs" />
+      <File FileName="web_s10197636/Views/Vote/Details.cshtml" Line="13" Column="1" />
+      <File FileName="web_s10197636/Startup.cs" Line="51" Column="49" />
+      <File FileName="web_s10197636/Models/Account.cs" Line="12" Column="6" />
+      <File FileName="web_s10197636/appsettings.json" Line="1" Column="1" />
+      <File FileName="web_s10197636/Properties/launchSettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -48,6 +52,9 @@
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
                 <Node name="Book" expanded="True" />
                 <Node name="Branch" expanded="True" />
@@ -56,9 +63,7 @@
                 <Node name="Rental" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Staff" expanded="True" />
-                <Node name="Vote" expanded="True">
-                  <Node name="Details.cshtml" selected="True" />
-                </Node>
+                <Node name="Vote" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -24,5 +24,14 @@ namespace web_s10197636.Models
         public int Qty { get; set; }
 
         public string Justification { get; set; }
+
+        public class BookReserve
+        {
+            public BookReserve(int id)
+            {
+                BookId = id;
+            }
+            public int BookId { get; set; }
+        }
     }
 }

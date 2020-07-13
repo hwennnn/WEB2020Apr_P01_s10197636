@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using web_s10197636.Models;
 
 namespace web_s10197636.Controllers
@@ -76,10 +81,30 @@ namespace web_s10197636.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult StudentLogin()
+        [Authorize]
+        public async Task<ActionResult> StudentLogin()
         {
-            HttpContext.Session.SetString("Role", "Student");
-            return RedirectToAction("Index", "Book");
+            //Retrieve the access token of the user
+            string accessToken = await HttpContext.GetTokenAsync("access_token");
+            //Call API to obtain user information
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://ictonejourney.com");
+            client.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", accessToken);
+            HttpResponseMessage response = await
+             client.GetAsync("/api/Users/userinfo");
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                //Convert the JSON string into an Account object
+                Account account = JsonConvert.DeserializeObject<Account>(data);
+                HttpContext.Session.SetString("LoginID", account.Student.Name);
+                HttpContext.Session.SetString("Role", "Student");
+                HttpContext.Session.SetString("LoggedInTime",
+                 DateTime.Now.ToString());
+                return RedirectToAction("Index", "Book");
+            }
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
