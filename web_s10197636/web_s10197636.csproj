@@ -4,10 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Custom' ">
-    <StartAction>Project</StartAction>
-    <ApplicationURL>https://localhost:52660;http://localhost:26996</ApplicationURL>
-  </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
     <Folder Include="Views\Rental\" />
